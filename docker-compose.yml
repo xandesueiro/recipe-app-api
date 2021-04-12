@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  app:
+    build:
+      # current directory "."
+      context: .
+    ports:
+      - "8000:8000"
+    # volumes allow to get updates in the project into the docker image, without affect the image 
+    volumes:
+      - ./app:/app
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
