@@ -1,5 +1,5 @@
 FROM python:3.7-alpine
-MAINTAINER Trilhando Saber Labs
+# MAINTAINER Trilhando Saber Labs
 
 # Recommended when run python in docker containers
 ENV PYTHONUNBUFFERED 1
