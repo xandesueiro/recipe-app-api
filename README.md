@@ -9,6 +9,11 @@
 - Projeto original
 Github: <git@github.com:LondonAppDeveloper/recipe-app-api.git>
 
+- Projeto pessoal
+Gitlab refletindo (**mirroring**) o Github:
+  - <git@github.com:xandesueiro/recipe-app-api.git>
+  - <git@gitlab.com:lvx.xande/recipe-app-api.git>
+
 ## Observações gerais
 
 | Software /Linguagem / Arquivo  | Observação  |
