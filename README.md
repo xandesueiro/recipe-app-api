@@ -74,6 +74,7 @@ Gitlab refletindo (**mirroring**) o Github:
   > Para testar
   >> É necessário gerar um token e utilizar com o plugin Modheader do Google Chrome
 
+- <http://localhost:8000/admin/> : testar funcionamento do app
 - <http://localhost:8000/api/user/create/> : paar criar um usuario e senha
 - <http://localhost:8000/api/user/token> : para gerar um token
 - Authorization
