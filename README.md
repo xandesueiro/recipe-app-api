@@ -52,6 +52,12 @@ Gitlab refletindo (**mirroring**) o Github:
   $django-admin --version
   ```
 
+## Construindo a imagem docker
+
+  ```shel
+  $docker build .
+  ```
+
 ## Subindo tabelas do banco de dados (1a vez)
 
   ```shell
