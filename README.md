@@ -52,6 +52,12 @@ Gitlab refletindo (**mirroring**) o Github:
   $django-admin --version
   ```
 
+## Construindo a imagem docker
+
+  ```shell
+  $docker build .
+  ```
+
 ## Subindo tabelas do banco de dados (1a vez)
 
   ```shell
@@ -60,7 +66,7 @@ Gitlab refletindo (**mirroring**) o Github:
 
 ## Rodando a aplicação
 
-  ```shel
+  ```shell
   $docker compose up
   $docker-compose run app sh -c "python manage.py test && flake8"
   ```
@@ -68,6 +74,7 @@ Gitlab refletindo (**mirroring**) o Github:
   > Para testar
   >> É necessário gerar um token e utilizar com o plugin Modheader do Google Chrome
 
+- <http://localhost:8000/admin/> : testar funcionamento do app
 - <http://localhost:8000/api/user/create/> : paar criar um usuario e senha
 - <http://localhost:8000/api/user/token> : para gerar um token
 - Authorization
