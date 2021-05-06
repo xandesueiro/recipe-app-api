@@ -54,7 +54,7 @@ Gitlab refletindo (**mirroring**) o Github:
 
 ## Construindo a imagem docker
 
-  ```shel
+  ```shell
   $docker build .
   ```
 
@@ -66,7 +66,7 @@ Gitlab refletindo (**mirroring**) o Github:
 
 ## Rodando a aplicação
 
-  ```shel
+  ```shell
   $docker compose up
   $docker-compose run app sh -c "python manage.py test && flake8"
   ```
