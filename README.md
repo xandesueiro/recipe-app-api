@@ -3,16 +3,18 @@
 ## 🍪🥂🥩 Projeto recipe-app-api
 
   > Advanced REST API with Python, Django REST Framework and Docker using Test Driven Development (TDD)
-  ==> Treinamento realizado na plataforma Udemy <http://udemy.com>
-  ==> Créditos para **Mark Winterbottom / LondonAppDeveloper** - Full-Stack Software Engineer
+  ▷ Treinamento realizado na plataforma Udemy <http://udemy.com>
+  ▷ Créditos para **Mark Winterbottom / LondonAppDeveloper** - Full-Stack Software Engineer
 
-- Projeto original
-Github: <git@github.com:LondonAppDeveloper/recipe-app-api.git>
+- Projetos originais
+▷ Github **recipe-app-api**: <git@github.com:LondonAppDeveloper/recipe-app-api.git>
+▷ Github **recipe-app-api-proxy**: <https://gitlab.com/LondonAppDev/recipe-app-api-proxy>
+  > projeto proxy é complementar ao projeto principal recipe-app-api
 
 - Projeto pessoal
-Gitlab refletindo (**mirroring**) o Github:
-  - <git@github.com:xandesueiro/recipe-app-api.git>
-  - <git@gitlab.com:lvx.xande/recipe-app-api.git>
+▷ Gitlab refletindo (**mirroring**) para o Github:
+  - Github: <git@github.com:xandesueiro/recipe-app-api.git>
+  - Github: <git@github.com:xandesueiro/recipe-app-api-proxy.git>
 
 ## Observações gerais
 
@@ -24,54 +26,70 @@ Gitlab refletindo (**mirroring**) o Github:
 
 ## Configurações e execução da aplicação
 
-- Baixe a aplicação para seu máquina
+- Baixe as aplicações para seu máquina
 
   ```shell
-  $git clone git@github.com:xandesueiro/recipe-app-api.git
-  $cd recipe-app-api
-  $ls -la
+  git clone git@github.com:xandesueiro/recipe-app-api.git
+  cd recipe-app-api
+  ls -la
+
+  cd ..
+  git clone git@github.com:xandesueiro/recipe-app-api-proxy.git
+
+  cd ../recipe-app-api
+
   ```
 
 - Gere e execute o ambiente virtual
 
   ```shell
-  $python -m venv env
-  $pwd
+  #dentro do diretorio da aplicacao recipe-app-api
+  python -m venv env
+  pwd
   #<caminho-do-projeto>
-  $source <caminho-do-projeto>/env/Scripts/activate
+  source <caminho-do-projeto>/env/Scripts/activate
   ```
 
 - Instale o Django e o Django Framework
 
   ```shell
-  $cd env/Scripts/
-  $python.exe -m pip install --upgrade pip #garantir versão mais atualizada do Pip
-  $cd ../env/
-  $pip install django --user #--user é opcional (somente se der erro de permissionamento)
-  $pip install djangorestframework --user #--user é opcional (somente se der erro de permissionamento)
-  $django-admin --version
+  #dentro do diretorio da aplicacao recipe-app-api
+  cd env/Scripts/
+  python.exe -m pip install --upgrade pip #garantir versão mais atualizada do Pip
+  cd ../env/
+  pip install django --user #--user é opcional (somente se der erro de permissionamento)
+  pip install djangorestframework --user #--user é opcional (somente se der erro de permissionamento)
+  django-admin --version
   ```
 
-## Construindo a imagem docker
+## Construindo as imagens docker
 
   ```shell
-  $docker build .
+  #dentro do diretorio da aplicacao recipe-app-api
+  docker build .
+
+  cd ../recipe-app-api-proxy
+  #dentro do diretorio da aplicacao recipe-app-api-proxy
+  docker build -t proxy .
   ```
 
 ## Subindo tabelas do banco de dados (1a vez)
 
   ```shell
-  $docker-compose run app sh -c "python manage.py makemigrations core"
+  #dentro do diretorio da aplicacao recipe-app-api
+  cd ../recipe-app-api
+  docker-compose run app sh -c "python manage.py makemigrations core"
   ```
 
 ## Rodando a aplicação
 
   ```shell
-  $docker compose up
-  $docker-compose run app sh -c "python manage.py test && flake8"
+  #dentro do diretorio da aplicacao recipe-app-api
+  docker-compose run app sh -c "python manage.py test && flake8"
+  docker-compose -f docker-compose-proxy.yml up
   ```
 
-  > Para testar
+  > Para testar **recipe-app-api**
   >> É necessário gerar um token e utilizar com o plugin Modheader do Google Chrome
 
 - <http://localhost:8000/admin/> : testar funcionamento do app
