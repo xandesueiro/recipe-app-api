@@ -108,6 +108,10 @@ Staging Destroy:
   stage: Destroy
   script:
     - echo "==========Run Terraform Destroy for Staging=========="
+    - cd deploy/
+    - terraform init
+    - terraform workspace select staging
+    - terraform destroy -auto-approve
   rules:
     - if: '$CI_COMMIT_BRANCH =~ /^(main|master|production)$/'
       when: manual
@@ -116,6 +120,10 @@ Production Destroy:
   stage: Destroy
   script:
     - echo "==========Run Terraform Destroy for Production=========="
+    - cd deploy/
+    - terraform init
+    - terraform workspace select production
+    - terraform destroy -auto-approve
   rules:
     - if: '$CI_COMMIT_BRANCH == "production"'
       when: manual
