@@ -1,5 +1,5 @@
 FROM python:3.7-alpine
-LABEL maintainer="Trilhando Saber Labs"
+LABEL maintainer="London App Developer Ltd"
 
 ENV PYTHONUNBUFFERED 1
 ENV PATH="/scripts:${PATH}"
