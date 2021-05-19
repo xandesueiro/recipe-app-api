@@ -85,7 +85,9 @@
 
   ```shell
   #dentro do diretorio da aplicacao recipe-app-api
+  docker-compose build
   docker-compose run app sh -c "python manage.py test && flake8"
+  docker-compose up --build
   docker-compose -f docker-compose-proxy.yml up
   ```
 
